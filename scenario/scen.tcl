@@ -9,16 +9,16 @@ set val(mac)        		Mac/802_11		  	        ;# MAC type
 set val(ifq)        		Queue/DropTail/PriQueue		;# interface queue type
 set val(ll)         		LL				                ;# link layer type
 set val(ant)        		Antenna/OmniAntenna		    ;# antenna model
-set opt(x)              1200   				            ;# X dimension of the topography
-set opt(y)              1200   				            ;# Y dimension of the topography
-set val(ifqlen)         1000				              ;# max packet in ifq
-set val(nn)             40		                    ;# how many nodes are simulated
+set opt(x)              1186   				            ;# X dimension of the topography
+set opt(y)              584   				            ;# Y dimension of the topography
+set val(ifqlen)         50				              ;# max packet in ifq
+set val(nn)             25		                    ;# how many nodes are simulated
 set val(seed)			      1.0				                ;
 set val(adhocRouting)   AODV				              ;# routing protocol
 set val(stop)           200				                ;# simulation time
 
 # Modify this 
-set val(dir)            "40node/"				          ;# directory name
+set val(dir)            "25node-normal/"				          ;# directory name
 set val(cp)			        "$val(dir)cbr.txt"			  ;# traffic filename
 set val(sc)			        "$val(dir)scenario.txt"		;# mobility filename
 set val(out_tracefd)		"$val(dir)scenario.tr"		;# output filename of tracefd

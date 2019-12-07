@@ -22,7 +22,10 @@ set val(t1)     0.0                         ;
 set val(t2)     0.0                         ;  
 
 # Modify this 
-set val(dir)        "25node/"				;# directory name
+# Uncomment to test AODV-blackhole
+set val(dir)        "25node/blackhole/"				;# directory name
+# Uncomment to test AODV-ori
+# set val(dir)        "25node/normal/"				;# directory name
 set val(cp)         "$val(dir)cbr.txt"		;# traffic filename
 set val(sc)			"$val(dir)scenario.txt"	;# mobility filename
 set val(out_tr)     "$val(dir)scenario.tr"  ;# output filename of tracefd
@@ -227,10 +230,10 @@ $ns at 0.0 "$n9 color blue"
 #        Multiple blackhole nodes         
 #===================================
 
+# Uncomment to test AODV-blackhole
 $ns at 1.8 "[$n1 set ragent_] blackhole"
 $ns at 0.0 "[$n7 set ragent_] blackhole"
 $ns at 0.0 "[$n13 set ragent_] blackhole"
-
 
 #===================================
 #        Generate movement          

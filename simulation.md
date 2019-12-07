@@ -181,5 +181,23 @@ After doing a simulation, then we must evaluate it.
     ```bash
     nam scenario.nam
     ```
+### 3.2.5 Special Case : Blackhole
+
+In this special case, we don't need to generate setdest and CBR dynamically. First, we can set static 25 nodes. You can find the full script of blackhole scenario [here](scenario/blackhole.tcl). We compare the AODV-ori and AODV-blackhole using this scenario.
+
+Consider the following lines:
+```tcl
+# Uncomment to test AODV-blackhole
+$ns at 1.8 "[$n1 set ragent_] blackhole"
+$ns at 0.0 "[$n7 set ragent_] blackhole"
+$ns at 0.0 "[$n13 set ragent_] blackhole"
+```
+and
+```tcl
+# Uncomment to test AODV-blackhole
+set val(dir)        "25node/blackhole/"				;# directory name
+# Uncomment to test AODV-ori
+# set val(dir)        "25node/normal/"				;# directory name
+```
 
 
