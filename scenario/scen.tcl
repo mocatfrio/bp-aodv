@@ -17,7 +17,7 @@ set val(seed)			      1.0				                ;
 set val(adhocRouting)   AODV				              ;# routing protocol
 set val(stop)           200				                ;# simulation time
 
-# Modif this 
+# Modify this 
 set val(dir)            "40node/"				          ;# directory name
 set val(cp)			        "$val(dir)cbr.txt"			  ;# traffic filename
 set val(sc)			        "$val(dir)scenario.txt"		;# mobility filename
