@@ -183,7 +183,7 @@ After doing a simulation, then we must evaluate it.
     ```
 ### 3.2.5 Special Case : Blackhole
 
-In this special case, we don't need to generate setdest and CBR dynamically. First, we can set static 25 nodes. You can find the full script of blackhole scenario [here](scenario/blackhole.tcl). We compare the AODV-ori and AODV-blackhole using this scenario.
+In this special case, we can set static 25 nodes. You can find the full script of blackhole scenario [here](scenario/blackhole.tcl). We compare the AODV-ori and AODV-blackhole using this scenario.
 
 Consider the following lines:
 ```tcl
