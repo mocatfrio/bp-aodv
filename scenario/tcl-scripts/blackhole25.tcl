@@ -17,7 +17,7 @@ set val(nn)     25                         ;# number of mobilenodes
 set val(rp)     AODV                      ;# routing protocol
 set val(x)      1186                      ;# X dimension of topography
 set val(y)      600                      ;# Y dimension of topography
-set val(stop)   40                         ;# time of simulation end
+set val(stop)   70                         ;# time of simulation end
 set val(t1)     0.0                         ;
 set val(t2)     0.0                          ;  
 

@@ -17,11 +17,11 @@ set val(nn)     30                         ;# number of mobilenodes
 set val(rp)     AODV                      ;# routing protocol
 set val(x)      1186                      ;# X dimension of topography
 set val(y)      600                      ;# Y dimension of topography
-set val(stop)   40                         ;# time of simulation end
+set val(stop)   20                         ;# time of simulation end
 set val(t1)     0.0                         ;
 set val(t2)     0.0                          ;  
 
-set val(dir)        "../result/30node/blackhole/"				;# directory name
+set val(dir)        "../result/20s/30node/blackhole/"				;# directory name
 set val(out_tr)     "$val(dir)scenario.tr"  ;# output filename of tracefd
 set val(out_nam)	"$val(dir)scenario.nam" ;# output filename of nametrace
 

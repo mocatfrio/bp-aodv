@@ -155,9 +155,9 @@ This simple documentation created by Mocatfrio 😽
 ### 2.3 Simple Simulation
 
 1. **Scenario**
-   * Number of nodes : 20, 25, 30 nodes (25)
+   * Number of nodes : 20, 25, 30 nodes (30)
    * Number of blackhole nodes : 3 nodes
-   * Simulation time : 40, 70, 100 second (40)
+   * Simulation time : 20, 40, 70 second (40)
    * Routing protocol : AODV and Blackhole-AODV
    * Area : 1186 x 600
 2. Make TCL scripts to conduct the simulation : [Here's the scripts](scenario/tcl-scripts)
@@ -177,9 +177,25 @@ This simple documentation created by Mocatfrio 😽
 
 ![](img/ss2.png)
 
-Based on our experiment, AODV-blackhole has a smaller PDR (Packet Delivery Ratio) than the AODV-ori. Hence, we implement BP-AODV to solve the blackhole problem.
+1. Packet Delivery Ratio (PDR)
+    * Number of Nodes
+        ![](img/pdr-node.png)
+    * Simulation Time
+        ![](img/pdr-time.png)
 
+2. End-to-End Delay (E2E)
+    * Number of Nodes
+        ![](img/e2e-node.png)
+    * Simulation Time
+        ![](img/e2e-time.png)
 
+3. Throughput
+    * Number of Nodes
+        ![](img/tput-node.png)
+    * Simulation Time
+        ![](img/tput-time.png)
+
+For the future work, we will implement BP-AODV (Blackhole Protected) and S-AODV (Secure).
 
 ## 3. [Detailed Simulation and Evaluation](simulation.md)
 
