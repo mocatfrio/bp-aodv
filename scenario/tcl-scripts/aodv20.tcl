@@ -307,7 +307,7 @@ proc finish {} {
     $ns flush-trace
     close $tracefile
     close $namfile
-    exec nam blackhole.nam &
+    # exec nam blackhole.nam &
     exit 0
 }
 for {set i 0} {$i < $val(nn) } { incr i } {

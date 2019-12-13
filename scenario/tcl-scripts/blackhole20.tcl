@@ -205,8 +205,9 @@ $ns at 0.0 "$n9 label Destination"
 #        Multiple blackhole nodes         
 #===================================
 
-$ns at 0.0 "[$n1 set ragent_] hacker"
-$ns at 0.0 "[$n13 set ragent_] hacker"
+$ns at 0.0 "[$n1 set ragent_] blackhole"
+$ns at 0.0 "[$n7 set ragent_] blackhole"
+$ns at 0.0 "[$n13 set ragent_] blackhole"
 
 #===================================
 #        Generate movement          
@@ -313,7 +314,7 @@ proc finish {} {
     $ns flush-trace
     close $tracefile
     close $namfile
-    exec nam blackhole.nam &
+    # exec nam blackhole.nam &
     exit 0
 }
 for {set i 0} {$i < $val(nn) } { incr i } {

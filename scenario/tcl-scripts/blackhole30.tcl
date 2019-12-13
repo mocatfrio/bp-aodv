@@ -284,8 +284,9 @@ $ns at 1.0 "$n27 setdest 676.0 464.0 5.0"
 #        Multiple blackhole nodes         
 #===================================
 
-$ns at 0.0 "[$n1 set ragent_] hacker"
-$ns at 0.0 "[$n13 set ragent_] hacker"
+$ns at 0.0 "[$n1 set ragent_] blackhole"
+$ns at 0.0 "[$n7 set ragent_] blackhole"
+$ns at 0.0 "[$n13 set ragent_] blackhole"
 
  
 #$ns at 5 " $n6 setdest 650 490 40 "
@@ -369,7 +370,7 @@ proc finish {} {
     $ns flush-trace
     close $tracefile
     close $namfile
-    exec nam blackhole.nam &
+    # exec nam blackhole.nam &
     exit 0
 }
 for {set i 0} {$i < $val(nn) } { incr i } {

@@ -156,16 +156,22 @@ This simple documentation created by Mocatfrio 😽
 
 1. **Scenario**
    * Number of nodes : 20, 25, 30 nodes (25)
+   * Number of blackhole nodes : 3 nodes
    * Simulation time : 40, 70, 100 second (40)
    * Routing protocol : AODV and Blackhole-AODV
    * Area : 1186 x 600
 2. Make TCL scripts to conduct the simulation : [Here's the scripts](scenario/tcl-scripts)
 3. Run the scripts as usual, for example: 
     ```bash
-    ns BAODV_20.tcl
+    ns blackhole20.tcl
     ```
     It will generate an output file.
 4. Analyze the output file using AWK scripts to get the **PDR** (Packet Delivery Ratio), **End-to-end Delay**, and **Througput** : [Here's the scripts](scenario/awk-scripts)
+    ```bash
+    cd awk-scripts/
+    awk -f eval.awk ../result/25node/ori/scenario.tr # get PDR and E2E Delay
+    awk -f tput.awk ../result/25node/ori/scenario.tr # get throughput
+    ```
 
 ### 2.4 Experiment Results 
 
