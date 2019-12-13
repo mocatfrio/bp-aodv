@@ -179,20 +179,29 @@ This simple documentation created by Mocatfrio 😽
 
 1. Packet Delivery Ratio (PDR)
     * Number of Nodes
+  
         ![](img/pdr-node.png)
+
     * Simulation Time
+        
         ![](img/pdr-time.png)
 
 2. End-to-End Delay (E2E)
     * Number of Nodes
+        
         ![](img/e2e-node.png)
+  
     * Simulation Time
+        
         ![](img/e2e-time.png)
 
 3. Throughput
     * Number of Nodes
+        
         ![](img/tput-node.png)
+  
     * Simulation Time
+        
         ![](img/tput-time.png)
 
 For the future work, we will implement BP-AODV (Blackhole Protected) and S-AODV (Secure).
