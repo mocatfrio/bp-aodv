@@ -149,12 +149,11 @@ AODV::AODV(nsaddr_t id) : Agent(PT_AODV),
   index = id;
   seqno = 2;
   bid = 1;
-  chal = 1;
+  // chal = 1;
 
   LIST_INIT(&nbhead);
   LIST_INIT(&bihead);
 
-  // modification to add blackhole mechanism
   malicious = 999; 
 
   logtarget = 0;
@@ -487,29 +486,25 @@ aodv_rt_entry *rt;
   * I don't have a route.
   */
  else {
-  Packet *rerr = Packet::alloc();
-  struct hdr_aodv_error *re = HDR_AODV_ERROR(rerr);
-  /* 
-    * For now, drop the packet and send error upstream.
-    * Now the route errors are broadcast to upstream
-    * neighbors - Mahesh 09/11/99
-    */	
-  
-    assert (rt->rt_flags == RTF_DOWN);
-    re->DestCount = 0;
-    re->unreachable_dst[re->DestCount] = rt->rt_dst;
-    re->unreachable_dst_seqno[re->DestCount] = rt->rt_seqno;
-    re->DestCount += 1;
+ Packet *rerr = Packet::alloc();
+ struct hdr_aodv_error *re = HDR_AODV_ERROR(rerr);
+ /* 
+  * For now, drop the packet and send error upstream.
+  * Now the route errors are broadcast to upstream
+  * neighbors - Mahesh 09/11/99
+  */	
+ 
+   assert (rt->rt_flags == RTF_DOWN);
+   re->DestCount = 0;
+   re->unreachable_dst[re->DestCount] = rt->rt_dst;
+   re->unreachable_dst_seqno[re->DestCount] = rt->rt_seqno;
+   re->DestCount += 1;
 #ifdef DEBUG
    fprintf(stderr, "%s: sending RERR...\n", __FUNCTION__);
 #endif
+   sendError(rerr, false);
 
-    // modification - blackhole disable send (error)
-    if(malicious==1000);
-    else
-      sendError(rerr, false);
-
-    drop(p, DROP_RTR_NO_ROUTE);
+   drop(p, DROP_RTR_NO_ROUTE);
  }
 
 }
@@ -684,18 +679,15 @@ aodv_rt_entry *rt;
     return;
   } 
 
-//  if (id_lookup(rq->rq_src, rq->rq_bcast_id)) {
+ if (id_lookup(rq->rq_src, rq->rq_bcast_id)) {
 
-// #ifdef DEBUG
-//    fprintf(stderr, "%s: discarding request\n", __FUNCTION__);
-// #endif // DEBUG
+#ifdef DEBUG
+   fprintf(stderr, "%s: discarding request\n", __FUNCTION__);
+#endif // DEBUG
  
-//    Packet::free(p);
-//    return;
-//  }
-  if (req->rq_src) {
-
-  }
+   Packet::free(p);
+   return;
+ }
 
  /*
   * Cache the broadcast ID
@@ -1210,7 +1202,7 @@ AODV::sendRequest(nsaddr_t dst) {
  rq->rq_src_seqno = seqno;
  rq->rq_timestamp = CURRENT_TIME;
  // modification
- rq->rq_challenge = chal++;
+//  rq->rq_challenge = chal++;
 
  Scheduler::instance().schedule(target_, p, 0.);
 
